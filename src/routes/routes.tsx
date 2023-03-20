@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+
 import { loader } from '../utils/loader/loader'
 
 const errorPath = '*'
@@ -6,14 +7,13 @@ const searchBarPath = '/'
 const searchResultPath = '/items?'
 const detailProductPath = '/items/:id'
 
-const DetailProduct = loader('DetailProduct')
-const SearchBar = loader('SearchBar')
-const SearchResult = loader('SearchResult')
 const ErrorPage = loader('Error')
+const DetailProduct = loader('DetailProduct')
+const SearchResult = loader('SearchResult')
 
 type route = {
     path: string
-    element: ReactElement
+    element: ReactElement | undefined
 }
 
 const detailProductRoute: route = {
@@ -23,7 +23,7 @@ const detailProductRoute: route = {
 
 const searchBarRoute: route = {
     path: searchBarPath,
-    element: <SearchBar />,
+    element: undefined,
 }
 
 const searchResultRoute: route = {

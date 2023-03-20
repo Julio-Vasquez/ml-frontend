@@ -1,0 +1,19 @@
+@import './../../sass/utils/variables';
+
+.breadcrumb {
+    margin: {
+        top: $margin-size;
+        bottom: $margin-size;
+    }
+
+    &__item {
+        display: inline-block;
+        font-size: 14px;
+        &:after {
+            content: '>';
+        }
+        &:last-child:after {
+            content: '';
+        }
+    }
+}

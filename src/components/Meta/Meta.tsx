@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 
-import { MetaProps, MetaPropTypes } from './types'
+import { MetaProps, MetaPropTypes } from './meta.types'
 
 const Meta: FC<MetaProps> = ({ title, description, keywords, canonical }) => {
     return (

@@ -1,6 +1,10 @@
 import { FC } from 'react'
 
-import { DefaultLoadingPropTypes, LoadingProps, LoadingPropTypes } from './types'
+import {
+    DefaultLoadingPropTypes,
+    LoadingProps,
+    LoadingPropTypes,
+} from './loading.types'
 
 import './Loading.scss'
 

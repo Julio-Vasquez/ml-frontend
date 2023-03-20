@@ -1,0 +1,13 @@
+@import './../../sass/utils/variables';
+
+.app {
+    background-color: $background-color;
+    height: 100vh;
+
+    &__container .container-fluid {
+        padding: {
+            left: 64px;
+            right: 64px;
+        }
+    }
+}

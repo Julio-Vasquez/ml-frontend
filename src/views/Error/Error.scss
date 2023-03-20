@@ -1,0 +1,220 @@
+@import '../../sass/utils/variables';
+
+@keyframes rocket-movement {
+    100% {
+        transform: translate(1200px, -600px);
+    }
+}
+
+@keyframes spin-earth {
+    100% {
+        transform: rotate(-360deg);
+        transition: transform 20s;
+    }
+}
+
+@keyframes move-astronaut {
+    100% {
+        transform: translate(-160px, -160px);
+    }
+}
+
+@keyframes rotate-astronaut {
+    100% {
+        transform: rotate(-720deg);
+    }
+}
+
+@keyframes glow-star {
+    40% {
+        opacity: 0.3;
+    }
+    90%,
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+        border-radius: 999999px;
+    }
+}
+
+.spin-earth-on-hover {
+    transition: ease 200s !important;
+    transform: rotate(-3600deg) !important;
+}
+
+.error {
+    background: url(../../assets/img/404/bg_purple.png);
+    background: {
+        repeat: no-repeat;
+        attachment: fixed;
+        size: cover;
+        position: left top;
+    }
+    font: {
+        family: $font;
+        weight: 300;
+    }
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    user-select: none;
+    width: 100%;
+    &__stars {
+        background: url(../../assets/svg/404/overlay_stars.svg);
+        background: {
+            repeat: repeat;
+            size: contain;
+            position: left top;
+        }
+
+        .error__navbar {
+            padding-top: 15px;
+            .error__brand-logo {
+                margin: {
+                    left: 25px;
+                    top: 5px;
+                }
+                display: inline-block;
+                .error__logo {
+                    width: 80px;
+                    pointer-events: none;
+                }
+            }
+        }
+        .error__body {
+            padding: 17% 5% 10% 5%;
+            text-align: center;
+            .error__404 {
+                width: 300px;
+                position: relative;
+                z-index: 100;
+                pointer-events: none;
+            }
+            .btn-home {
+                border-radius: 100px;
+                border: {
+                    radius: 35px;
+                    color: #ffcb39;
+                    style: solid;
+                    width: 1px;
+                }
+                color: white;
+                display: block;
+                font: {
+                    family: $font;
+                    size: 14px;
+                }
+                letter-spacing: 2px;
+                margin: 15px auto;
+                padding: 10px 15px;
+                position: relative;
+                text : {
+                    align: center;
+                    decoration: none;
+                }
+                transition: all 0.3s ease-in;
+                width: 150px;
+                z-index: 200;
+                &:hover {
+                    background-color: #ffcb39;
+                    color: #fff;
+                    transform: scale(1.05);
+                    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+        .error__object {
+            &-rocket,
+            &-earth,
+            &-moon {
+                position: absolute;
+                pointer-events: none;
+            }
+            &-rocket {
+                animation: rocket-movement 150s linear infinite both running;
+                pointer-events: none;
+                top: 75%;
+                transform: translateX(-50px);
+                z-index: 95;
+                width: 40px;
+            }
+            &-earth {
+                top: 20%;
+                left: 15%;
+                z-index: 90;
+                width: 100px;
+            }
+            &-moon {
+                top: 12%;
+                left: 25%;
+                width: 80px;
+            }
+            &-astronaut {
+                pointer-events: none;
+                width: 140px;
+                animation: rotate-astronaut 200s infinite linear both alternate;
+            }
+            .box_astronaut {
+                animation: move-astronaut 50s infinite linear both alternate;
+                position: absolute;
+                right: 20%;
+                top: 60%;
+                will-change: transform;
+                z-index: 110;
+            }
+        }
+        .glowing_stars {
+            .star {
+                background-color: #fff;
+                border-radius: 100%;
+                height: 3px;
+                opacity: 0.3;
+                position: absolute;
+                width: 3px;
+                will-change: opacity;
+                &:nth-child(1) {
+                    animation: glow-star 2s infinite ease-in-out alternate 1s;
+                    left: 25%;
+                    top: 80%;
+                }
+                &:nth-child(2) {
+                    animation: glow-star 2s infinite ease-in-out alternate 3s;
+                    left: 40%;
+                    top: 20%;
+                }
+                &:nth-child(3) {
+                    animation: glow-star 2s infinite ease-in-out alternate 5s;
+                    left: 25%;
+                    top: 25%;
+                }
+                &:nth-child(4) {
+                    animation: glow-star 2s infinite ease-in-out alternate 7s;
+                    left: 80%;
+                    top: 75%;
+                }
+                &:nth-child(5) {
+                    animation: glow-star 2s infinite ease-in-out alternate 9s;
+                    left: 50%;
+                    top: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .custom-navbar {
+        text-align: center;
+        .brand-logo img {
+            width: 120px;
+        }
+    }
+
+    .box_astronaut {
+        top: 70%;
+    }
+
+    .central-body {
+        padding-top: 25%;
+    }
+}

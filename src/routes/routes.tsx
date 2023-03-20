@@ -1,14 +1,15 @@
-import { lazy, ReactElement } from 'react'
+import { ReactElement } from 'react'
+import { loader } from '../utils/loader/loader'
 
 const errorPath = '*'
 const searchBarPath = '/'
 const searchResultPath = '/items?'
 const detailProductPath = '/items/:id'
 
-const DetailProduct = lazy(() => import('./../views/DetailProduct'))
-const SearchBar = lazy(() => import('./../views/SearchBar'))
-const SearchResult = lazy(() => import('./../views/SearchResult'))
-const ErrorPage = lazy(() => import('./../views/Error'))
+const DetailProduct = loader('DetailProduct')
+const SearchBar = loader('SearchBar')
+const SearchResult = loader('SearchResult')
+const ErrorPage = loader('Error')
 
 type route = {
     path: string

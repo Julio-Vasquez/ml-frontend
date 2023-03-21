@@ -23,7 +23,7 @@ const detailProductRoute: route = {
 
 const searchBarRoute: route = {
     path: searchBarPath,
-    element: undefined,
+    element: <></>,
 }
 
 const searchResultRoute: route = {

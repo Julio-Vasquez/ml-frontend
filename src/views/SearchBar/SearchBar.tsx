@@ -9,12 +9,14 @@ const SearchBar = () => {
             <div className='container-fluid'>
                 <div className='header__container offset-1 col-10'>
                     <div>
-                        <img src={logo} alt='logo mercado libre' />
+                        <a href='/'>
+                            <img src={logo} alt='logo mercado libre' />
+                        </a>
                     </div>
                     <form
                         className='header__form-content'
                         method='get'
-                        action='items'
+                        action={'/items'}
                     >
                         <input
                             className='header__form-search'

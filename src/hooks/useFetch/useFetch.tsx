@@ -1,8 +1,13 @@
 import { useEffect, useReducer, useRef } from 'react'
-import { getHeader } from '../../utils/api'
 
 import { FetchCase } from './fetch.enum'
+import { getHeader } from '../../utils/api'
 import { Action, Cache, Props, State } from './fetch.types.ts'
+import {
+    BASE_URL_API,
+    PORT,
+    PREFIX,
+} from '../../utils/constants/environment.constant'
 
 function useFetch<T = unknown>({ url, options }: Props): State<T> {
     const cache = useRef<Cache<T>>({})
@@ -36,20 +41,24 @@ function useFetch<T = unknown>({ url, options }: Props): State<T> {
         // to manually call the (void functionName())
         ;(async () => {
             if (!url) return
+            const newUrl = new URL(
+                url,
+                `${BASE_URL_API}:${PORT}/${PREFIX}/`
+            ).toString()
 
             dispatch({ type: FetchCase.loading })
             // If a cache exists for this url, return it
-            if (cache.current[url]) {
+            if (cache.current[newUrl]) {
                 dispatch({ type: FetchCase.fetched, payload: cache.current[url] })
                 return
             }
             try {
-                const res = await fetch(url, { ...getHeader(), ...options })
+                const res = await fetch(newUrl, { ...getHeader(), ...options })
 
                 if (!res.ok) throw new Error(res.statusText)
 
                 const data = (await res.json()) as T
-                cache.current[url] = data
+                cache.current[newUrl] = data
 
                 if (cancelFetch.current) return
 

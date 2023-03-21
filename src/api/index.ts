@@ -1,4 +1,4 @@
 export const api = {
-    search: (query: string) => `api/items?q=${query}`,
-    detail: (id: string) => `api/items/${id}`,
+    search: (query: URLSearchParams) => `items?${query}`,
+    detail: (id: string) => `items/${id}`,
 }

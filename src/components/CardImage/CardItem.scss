@@ -1,8 +1,13 @@
 @import '../../sass/utils/variables';
 
 .card {
+    text-decoration: none;
     width: 100%;
     display: flex;
+    background-color: white;
+
+    border-bottom: 1px solid $background-color;
+
     &__image {
         margin: $margin-size;
         height: 180px;
@@ -28,6 +33,12 @@
             font-size: 24px;
             color: $title-color;
             padding-bottom: $padding-size;
+            a:link,
+            a:visited,
+            a:active {
+                text-decoration: none;
+                color: $title-color;
+            }
         }
         &-body {
             color: $description-color;

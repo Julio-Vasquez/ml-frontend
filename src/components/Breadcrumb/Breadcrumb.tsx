@@ -11,8 +11,8 @@ import './Breadcrumb.scss'
 export const Breadcrumb: FC<BreadcrumbProps> = ({ categories }) => {
     return (
         <nav className='breadcrumb'>
-            {categories?.map((category: string) => (
-                <ul key={category} className='breadcrumb__item'>
+            {categories?.map((category: string, key: number) => (
+                <ul key={key} className='breadcrumb__item'>
                     {category}
                 </ul>
             ))}

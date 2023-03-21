@@ -6,8 +6,15 @@ import { BreadcrumbPropTypes, BreadcrumbProps } from './breadcrumb-context.types
 
 const BreadcrumbProvider: FC<BreadcrumbProps> = ({ children }) => {
     const [breadcrumb, setBreadcrumb] = useState<string[]>([])
+
+    const handleSetBreadcrumb = (array: string[]) => {
+        setBreadcrumb([...breadcrumb, ...array])
+    }
+
     return (
-        <BreadcrumbContext.Provider value={{ breadcrumb, setBreadcrumb }}>
+        <BreadcrumbContext.Provider
+            value={{ breadcrumb, setBreadcrumb: handleSetBreadcrumb }}
+        >
             {children}
         </BreadcrumbContext.Provider>
     )

@@ -11,6 +11,7 @@ const SearchBar = () => {
         description: `Comprá productos con Envío Gratis en el día en Mercado Libre Argentina. Encontrá miles de marcas y productos a precios increíbles.`,
         canonical: 'https://www.mercadolibre.com.ar/#from=homecom',
     }
+
     return (
         <div className='header'>
             <Meta {...objMeta} />

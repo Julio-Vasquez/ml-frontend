@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 
 import SearchBar from '../../views/SearchBar'
 import { Breadcrumb } from '../Breadcrumb/Breadcrumb'
@@ -9,11 +9,7 @@ import { LayoutProps, LayoutPropTypes } from './layout.types'
 import './Layout.scss'
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-    const { breadcrumb, setBreadcrumb } = useBreadcrumb()
-
-    useEffect(() => {
-        setBreadcrumb(['apple', 'iphone'])
-    }, [])
+    const { breadcrumb } = useBreadcrumb()
 
     return (
         <div className='app'>

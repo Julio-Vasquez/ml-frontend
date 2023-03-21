@@ -1,0 +1,48 @@
+@import './../../sass/utils/variables';
+
+.product-information,
+.product-gallery {
+    display: inline-block;
+}
+
+.product-gallery,
+.product-gallery img {
+    width: 100%;
+    max-width: 680px;
+}
+
+.product-information {
+    padding: 32px 32px 0 0;
+    width: inherit;
+    &__status,
+    &__title,
+    &__price {
+        font-family: $font;
+    }
+    &__status {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+    }
+    &__price {
+        font-size: 46px;
+        padding: 32px 0;
+    }
+    &__actions {
+        .btn {
+            background-color: $btn-primary-color;
+            color: #fff;
+            width: 100%;
+            padding: 12px 0;
+            border-radius: 4px;
+            border-color: transparent;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react'
 
 import { Loading } from '../../components/Loading'
 
-export const loader = (nameView: string) => {
-    const Component = lazy(() => import(`../../views/${nameView}`))
+export const loader = (importFunction: any) => {
+    const Component = lazy(importFunction)
 
     return (props: any) => (
         <Suspense fallback={<Loading />}>

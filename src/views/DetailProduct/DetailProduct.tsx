@@ -16,7 +16,7 @@ const DetailProduct = () => {
     return loading && !data?.item ? (
         <Loading />
     ) : (
-        <div>
+        <div style={{ backgroundColor: '#fff' }}>
             <Product
                 price={data?.item?.price.amount}
                 salesQuantity={data?.item?.sold_quantity}

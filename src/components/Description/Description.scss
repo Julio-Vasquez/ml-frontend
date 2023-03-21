@@ -1,0 +1,11 @@
+.product-description {
+    padding: 32px;
+    &__title {
+        padding-bottom: 32px;
+        font-size: 28px;
+    }
+    &__text {
+        font-size: 16px;
+        margin: 0;
+    }
+}

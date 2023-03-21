@@ -7,10 +7,11 @@
     }
 
     &__item {
-        display: inline-block;
+        display: initial;
         font-size: 14px;
+        text-transform: capitalize;
         &:after {
-            content: '>';
+            content: ' > ';
         }
         &:last-child:after {
             content: '';

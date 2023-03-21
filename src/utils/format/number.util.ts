@@ -2,16 +2,21 @@ type props = {
     value: number
     decimalLength?: number
     location: string
-    type: string
+    currency: string
 }
 
-export const formatPrice = ({ value, decimalLength, location, type }: props) => {
+export const formatPrice = ({
+    value,
+    decimalLength = 2,
+    location,
+    currency,
+}: props) => {
     const formatter = new Intl.NumberFormat(location, {
         style: 'currency',
-        currency: type,
+        currency,
         currencySign: 'standard',
-        minimumFractionDigits: decimalLength || 2,
-        maximumFractionDigits: decimalLength || 2,
+        minimumFractionDigits: decimalLength,
+        maximumFractionDigits: decimalLength,
     })
 
     return formatter.format(value)

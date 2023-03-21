@@ -8,7 +8,7 @@ import {
 
 import './breadcrumb.scss'
 
-const Breadcrumb: FC<BreadcrumbProps> = ({ categories }) => {
+export const Breadcrumb: FC<BreadcrumbProps> = ({ categories }) => {
     return (
         <nav className='breadcrumb'>
             {categories?.map((category: string) => (
@@ -22,5 +22,3 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ categories }) => {
 
 Breadcrumb.propTypes = BreadcrumbPropTypes
 Breadcrumb.defaultProps = BreadcrumbDefaultProps
-
-export default Breadcrumb

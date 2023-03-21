@@ -1,1 +1,1 @@
-export { default } from "./Meta";
+export { Meta } from './Meta'

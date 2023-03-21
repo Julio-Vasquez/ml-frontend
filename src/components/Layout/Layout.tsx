@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react'
 
 import SearchBar from '../../views/SearchBar'
-import Breadcrumb from '../Breadcrumb/Breadcrumb'
+import { Breadcrumb } from '../Breadcrumb/Breadcrumb'
 import { useBreadcrumb } from '../../context/BreadcrumbContext'
 
 import { LayoutProps, LayoutPropTypes } from './layout.types'
@@ -26,7 +26,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
                     <div className='app__breadcrumb'>
                         <Breadcrumb categories={breadcrumb} />
                     </div>
-                    <div>{children}</div>
+                    {children}
                 </div>
             </main>
         </div>

@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useRef } from 'react'
+import { getHeader } from '../../utils/api'
 
 import { FetchCase } from './fetch.enum'
 import { Action, Cache, Props, State } from './fetch.types.ts'
@@ -43,7 +44,7 @@ function useFetch<T = unknown>({ url, options }: Props): State<T> {
                 return
             }
             try {
-                const res = await fetch(url, options)
+                const res = await fetch(url, { ...getHeader(), ...options })
 
                 if (!res.ok) throw new Error(res.statusText)
 

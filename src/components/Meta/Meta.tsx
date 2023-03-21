@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async'
 
 import { MetaProps, MetaPropTypes } from './meta.types'
 
-const Meta: FC<MetaProps> = ({ title, description, keywords, canonical }) => {
+export const Meta: FC<MetaProps> = ({ title, description, keywords, canonical }) => {
     return (
         <Helmet>
             <title>{title}</title>
@@ -17,5 +17,3 @@ const Meta: FC<MetaProps> = ({ title, description, keywords, canonical }) => {
 }
 
 Meta.propTypes = MetaPropTypes
-
-export default Meta

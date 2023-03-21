@@ -10,7 +10,7 @@ const detailProductPath = '/items/:id'
 const ErrorPage = loader(() => import('./../views/Error'))
 const DetailProduct = loader(() => import('./../views/DetailProduct'))
 const SearchResult = loader(() => import('./../views/SearchResult'))
-console.log(typeof ErrorPage)
+
 type route = {
     path: string
     element: ReactElement | undefined

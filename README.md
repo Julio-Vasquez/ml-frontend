@@ -2,7 +2,7 @@
 
 Este proyecto fue inicializado con [Vite](https://github.com/vitejs/vite).
 
-## Clonar los repositorios:
+## Clonar el repositorio:
 
 ```bash
 # Para clonar el repositorio solo tenemos que abrir nuestra terminal y ejecutar:
